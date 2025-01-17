@@ -1,0 +1,32 @@
+# Gradle files
+.gradle/
+build/
+captures/
+
+# Android Studio files
+.idea/
+*.iml
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# MacOS system files
+.DS_Store
+
+# Android build output directories
+/externalNativeBuild/
+/cxx/
+
+# Local properties
+local.properties
+
+# Gradle Wrapper
+gradle-wrapper.properties
+
+# Keystore files (if you don't want to include them in version control)
+*.jks
+*.keystore
