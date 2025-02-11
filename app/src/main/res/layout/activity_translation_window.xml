@@ -1,0 +1,147 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Transparent overlay to detect touches outside the content area -->
+    <FrameLayout
+        android:id="@+id/overlayLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"/>
+
+    <!-- Content area (dynamically sized based on the content) -->
+    <LinearLayout
+        android:id="@+id/contentView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/window_translation_rounded_background"
+        android:clipToPadding="false">
+
+        <!-- Input Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <!-- FrameLayout to overlay ImageButton inside -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <!-- Language selection for input -->
+            <Spinner
+                android:id="@+id/inputLanguageSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <!-- ImageButton positioned at the top-right -->
+            <ImageButton
+                android:id="@+id/saveButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:background="@android:color/transparent"
+                android:src="@drawable/save"
+                android:contentDescription="Action Button"
+                android:scaleType="centerCrop"
+                android:padding="4dp"/>
+            </FrameLayout>
+
+            <!-- ScrollView for input -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:clipToPadding="false">
+
+                <EditText
+                    android:id="@+id/translationsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Write your text here..."
+                    android:inputType="textMultiLine"
+                    android:scrollbars="vertical"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_on_primary"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+            </ScrollView>
+
+            <!-- Translate Button (Initially invisible) -->
+            <Button
+                android:id="@+id/translateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Translate"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- purple Line Separator -->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="@color/color_primary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Output Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Language selection for output -->
+            <Spinner
+                android:id="@+id/outputLanguageSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" 
+             
+                />
+
+            <!-- Output Section with Lottie Animation -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:clipToPadding="false">
+
+                <!-- Lottie Animation for loading -->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/loadingAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:lottie_loop="true" 
+                    app:lottie_autoPlay="true" /> 
+
+                <!-- Scrollable Text View for Translated Text -->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/translatedTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:visibility="gone"
+                        android:text="Translation will appear here"
+                        android:textSize="16sp"
+                        android:textColor="@color/color_on_primary" />
+                </ScrollView>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

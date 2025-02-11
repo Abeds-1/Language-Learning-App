@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Image at the top -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/myImage"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:src="@drawable/service_photo"
+            android:contentDescription="An image"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            app:shapeAppearanceOverlay="@style/RoundedImage"
+            android:scaleType="centerCrop"/>
+
+        <!-- Description paragraph -->
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap on the Tap to translate notification or the floating icon to translate from anywhere anything on the screen"
+            android:textSize="16sp"
+            android:textColor="@color/color_on_primary"
+            android:gravity="start|center_vertical"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- List item 1 -->
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Use Tap to Translate"
+                    android:textSize="18sp"
+                    android:textColor="@color/color_on_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="When on, Tap to Translate runs in the background and displays a notification"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_on_primary"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/toggle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- List item 2 -->
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show floating icon"
+                    android:textSize="18sp"
+                    android:textColor="@color/color_on_primary" />
+
+                <TextView
+                    android:id="@+id/text_2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Floating icon stays on the screen for quick access to Tap to Translate"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_on_primary"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/toggle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- List item 3 -->
+        <LinearLayout
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scanning mode"
+                    android:textSize="18sp"
+                    android:textColor="@color/color_on_primary" />
+
+                <TextView
+                    android:id="@+id/text_3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="When you tap on the floating icon, your device screen gets scanned and you get to choose what you want to translate.\nOne click on the icon for scanning the whole screen\nDouble click for choosing the part you want to scan"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_on_primary"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/toggle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#6200EE</color>
+    <color name="color_primary">#FF6200EE</color>
+    <color name="color_primary_variant">#FF3700B3</color>
+    <color name="color_on_primary">#FFFFFFFF</color>
+    <color name="color_secondary">#FF6200EE</color>
+    <color name="color_secondary_variant">#FF3700B3</color>
+    <color name="color_on_secondary">#FFFFFFFF</color>
+    <color name="background">#222222</color>
+    <color name="box">#141414</color>
+    <color name="save">#FFFFFFFF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#222222</color>
+    <color name="dark_grey">#141414</color> 
+    <color name="switch_grey">#808080</color> <!-- Gray color -->
+    <color name="switch_light_grey">#D3D3D3</color>
+    <color name="yellow">#FFFFEB3B</color> <!-- Added Yellow color -->
+    <color name="selection_activity_grey">#D3D3D3</color>
+</resources>

@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <!-- WordView for displaying words -->
+    <com.example.language_learning_helper.ElementsView
+        android:id="@+id/elementsView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/bottomBar" />
+
+    <!-- Bottom Bar -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="#80000000">
+
+        <!-- Tick Button -->
+        <Button
+            android:id="@+id/tickButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✔" />
+
+        <!-- Clickable Text Buttons -->
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingHorizontal="6dp">
+
+            <TextView
+                android:id="@+id/wordsButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Words"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:padding="3dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/linesButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Lines"
+                android:textColor="#D3D3D3"
+                android:gravity="center"
+                android:padding="3dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/paragraphsButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Paragraphs"
+                android:textColor="#D3D3D3"
+                android:gravity="center"
+                android:padding="3dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- Cross Button -->
+        <Button
+            android:id="@+id/barButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✖" />
+    </LinearLayout>
+
+</RelativeLayout>

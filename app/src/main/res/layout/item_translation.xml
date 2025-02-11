@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@android:color/transparent">
+
+    <TextView
+        android:id="@+id/original_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Original Text"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/translated_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Translated Text"
+        android:layout_below="@id/original_text" />
+
+    <TextView
+        android:id="@+id/language_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:textStyle="italic"
+        android:textSize="12sp"
+        android:layout_below="@id/translated_text"
+        android:paddingTop="4dp" />
+
+    <ImageView
+        android:id="@+id/save_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/save"
+        android:contentDescription="Save Icon" />
+</RelativeLayout>
