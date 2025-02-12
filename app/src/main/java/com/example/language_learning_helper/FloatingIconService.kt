@@ -204,27 +204,27 @@ class FloatingIconService : Service() {
         private fun updateNotificationAction(context: Context, isFloatingIconVisible: Boolean) {
             // Obtain the NotificationManager
             val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            
+        
             // Intent for "Open" action
             val openIntent = Intent("com.example.language_learning_helper.TOGGLE_FLOATING_ICON_VISIBILITY")
-            val openPendingIntent = PendingIntent.getBroadcast(this@FloatingIconService, 0, openIntent, PendingIntent.FLAG_IMMUTABLE)
+            val openPendingIntent = PendingIntent.getBroadcast(context, 0, openIntent, PendingIntent.FLAG_IMMUTABLE)
         
             // Intent for "Turn Off" action
             val anotherActionIntent = Intent("com.example.language_learning_helper.STOP_SERVICE")
-            val anotherActionPendingIntent = PendingIntent.getBroadcast(this@FloatingIconService, 1, anotherActionIntent, PendingIntent.FLAG_IMMUTABLE)
+            val anotherActionPendingIntent = PendingIntent.getBroadcast(context, 1, anotherActionIntent, PendingIntent.FLAG_IMMUTABLE)
         
             val translationInput = ""
             // Intent for tapping the notification itself (when user taps on the notification)
-            val tapIntent = Intent(this@FloatingIconService, TranslationWindowActivity::class.java).apply {
+            val tapIntent = Intent(context, TranslationWindowActivity::class.java).apply {
                 putExtra("TRANSLATION_INPUT", translationInput)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) // Required when launching from a service
             }
-            val tapPendingIntent = PendingIntent.getActivity(this@FloatingIconService, 2, tapIntent, PendingIntent.FLAG_IMMUTABLE)
+            val tapPendingIntent = PendingIntent.getActivity(context, 2, tapIntent, PendingIntent.FLAG_IMMUTABLE)
 
             // Determine the text based on the boolean
             val floatingIconActionText = if (isFloatingIconVisible) "Hide Floating Icon" else "Show Floating Icon"
             
-            NotificationCompat.Builder(this@FloatingIconService, CHANNEL_ID)
+            val notification = NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.owl_notification) // Use your icon here
                 .setContentTitle("Quick tap translation is on")
                 .setContentText("Tap to open the floating window.")
@@ -234,7 +234,6 @@ class FloatingIconService : Service() {
                 .addAction(0, "$floatingIconActionText", openPendingIntent)  // First button
                 .addAction(0, "Turn Off", anotherActionPendingIntent)  // Second button
                 .build()
-        
             // Update the notification
             notificationManager.notify(NOTIFICATION_ID, notification)
         }
