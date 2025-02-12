@@ -76,15 +76,16 @@
                     android:focusableInTouchMode="true" />
             </ScrollView>
 
-            <!-- Translate Button (Initially invisible) -->
-            <Button
-                android:id="@+id/translateButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Translate"
-                android:textColor="@color/white"
-                android:visibility="gone" />
         </LinearLayout>
+
+        <!-- Translate Button (Initially invisible) -->
+        <Button
+            android:id="@+id/translateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Translate"
+            android:textColor="@color/white"
+            android:visibility="gone" />
 
         <!-- purple Line Separator -->
         <View
