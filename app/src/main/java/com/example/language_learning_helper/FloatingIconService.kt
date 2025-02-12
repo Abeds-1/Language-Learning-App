@@ -501,6 +501,9 @@ class FloatingIconService : Service() {
                 resetPosition(szWindow.x)
             }
         }
+        val chatHeadImageView = chatHeadView!!.findViewById<ImageView>(R.id.chathead_img)
+        chatHeadImageView.background = null  // Clear existing background
+        chatHeadImageView.setBackgroundResource(R.drawable.circle_background)  // Set new background
     }
     
     private fun resetPosition(x_cord_now: Int) {
